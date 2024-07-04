@@ -22,7 +22,7 @@ const Main = () => {
                     </MainVideoBlock>
                     <MainInfo>
                         <Mainheading>Crypto Canyon Fall</Mainheading>
-                        <p style={{ color: "#6df378", marginBottom: "8px" }}>Ton.Gamerz</p>
+                        <a style={{ color: "#6df378", marginBottom: "4px",textDecoration:"none" }} href='https://play.google.com/store/apps/dev?id=7495909009623182783'>Ton.Gamerz</a>
                         <p style={{ color: "#c8c8c8", marginTop: "0" }}>Contains ads</p>
                         <div className='bcwrapper'>
                             <img src={logo} alt='logo' style={{ height: "70px", borderRadius: "16px" }} />
