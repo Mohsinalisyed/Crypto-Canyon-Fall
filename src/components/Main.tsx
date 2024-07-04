@@ -122,7 +122,7 @@ const MainInfo = styled.div`
     z-index: 2;
     display: flex;
     flex-direction: column;
-    padding:20% 12px  5% 12px;
+    padding:19% 12px  5% 12px;
     background: linear-gradient(90deg, #212123 0, transparent 56%),
     linear-gradient(0deg, #212123 0, transparent 56%),
     linear-gradient(270deg, #212123 0, transparent 56%);
