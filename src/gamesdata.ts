@@ -3,6 +3,7 @@ export const GamesData = [
     {
         name: 'Red Egg Rolling',
         logo: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Egg%20Rolling%20Game%20%20BTC%20Rewards%2Ficon.jpeg?alt=media&token=0864e65e-c30a-430d-8e82-ea31fc47fa45',
+        apk_file:"/public_assets/RedEgg.apk",
         screen_shot: [
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Block%20Shooter%20Puzzle%20Game%2F1.jpg?alt=media&token=00282145-4bf0-4a89-97ee-29d09276eeca',
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Block%20Shooter%20Puzzle%20Game%2F2.jpg?alt=media&token=43f1d026-782c-4360-8275-7e4726c7539c',
