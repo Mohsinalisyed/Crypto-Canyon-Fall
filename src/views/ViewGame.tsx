@@ -13,7 +13,8 @@ const ViewGame = () => {
 
     return (
         <div>
-            <Suspense fallback={<div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Loading...</div>}>                <LazyMain name={item.name} nameLine2={item.nameLine2} logo={item.logo} apk_file={item.apk_file} videoUrl={item.video_url} />
+            <Suspense fallback={<div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Loading...</div>}>
+                <LazyMain name={item.name} nameLine2={item.nameLine2} logo={item.logo} apk_file={item.apk_file} videoUrl={item.video_url} />
                 <LazySlider screen_shot={item.screen_shot} />
                 <LazyContentSection about={item.about} updated_on={item.updated_on} data_saftey={item.data_saftey} aboutLine2={item.aboutLine2} aboutLine3={item.aboutLine3} />
                 <LazyFooterSection />
