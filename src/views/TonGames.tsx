@@ -121,6 +121,7 @@ const MoreGamesWrapper = styled.div`
 const GameItem = styled.div`
   margin-right: 20px;
   margin-bottom: 20px;
+  cursor:pointer;
 `;
 
 const GameImage = styled.img`
