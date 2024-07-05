@@ -34,14 +34,3 @@ h5 {
       margin: 12px auto;
     }
 }
-.FooterSection {
-  border: #202124 solid 1px;
-  padding: 16px;
-  border-radius: 8px;
-}
-.footerStyle {
-  padding-bottom: 16px;
-  display: flex;
-  align-items: center;
-
-}

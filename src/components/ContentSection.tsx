@@ -15,9 +15,12 @@ const ContentSection: React.FC<Iprops> = ({ about, updated_on, data_saftey, abou
         <StyledContainer>
             <StyledTextH3>About this app</StyledTextH3>
             {about ? <StyledDesc>{about} </StyledDesc> : <StyledDesc>
-                Introducing Crypto Canyon Fall: A thrilling adventure where you can not only experience the adrenaline-pumping excitement of down treacherous.
+                Introducing Crypto Canyon Fall:
+                A thrilling adventure where you can not only experience the adrenaline-pumping excitement of down treacherous.
                 <br />
-                Get ready to embark on an epic journey through challenging canyons, filled with obstacles. Test your reflexes and precision as you navigate through narrow pathways, avoiding dangerous pitfalls and collecting valuable rewards along the way. Each level presents a unique set of challenges that will push your skills to the limit.
+                Get ready to embark on an epic journey through challenging canyons, filled with obstacles.
+                Test your reflexes and precision as you navigate through narrow pathways, avoiding dangerous pitfalls and collecting valuable rewards along the way.
+                Each level presents a unique set of challenges that will push your skills to the limit.
             </StyledDesc>}
             {aboutLine2 && <StyledDesc>{aboutLine2}</StyledDesc>}
             {aboutLine3 && <StyledDesc>{aboutLine3}</StyledDesc>}
