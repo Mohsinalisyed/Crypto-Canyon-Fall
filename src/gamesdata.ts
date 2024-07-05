@@ -39,7 +39,8 @@ export const GamesData = [
         name: 'Crypto Block',
         nameLine2: 'Puzzle Challenge',
         logo: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Crypto%20Blocks%20Puzzle%20Challenge%2Fcrypto%20blocks.webp?alt=media&token=eec41cfa-8938-4ee0-a1a9-9eb970ad4b92',
-        apk_file:"/public_assets/Crypto Blocks Puzzle Challenge_APK.apk",
+        apk_file: "/public_assets/Crypto Blocks Puzzle Challenge_APK.apk",
+        video_url:"/public_assets/Crypto Blocks Puzzle Challenge video.webm",
         screen_shot: [
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Crypto%20Blocks%20Puzzle%20Challenge%2FblocksSS1.webp?alt=media&token=992bdd4d-6095-4c72-9705-57a774eed426',
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Crypto%20Blocks%20Puzzle%20Challenge%2FblocksSS2.webp?alt=media&token=1838b159-6702-4387-91b2-6c925d9f4a72',
