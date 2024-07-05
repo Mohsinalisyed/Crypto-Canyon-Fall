@@ -1,7 +1,8 @@
 
 export const GamesData = [
     {
-        name: 'Red Egg Rolling',
+        name: 'Egg Rolling Game',
+        nameLine2:'BTC Rewards',
         logo: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Egg%20Rolling%20Game%20%20BTC%20Rewards%2Ficon.jpeg?alt=media&token=0864e65e-c30a-430d-8e82-ea31fc47fa45',
         apk_file: "/public_assets/RedEgg.apk",
         video_url:"/public_assets/Egg Rolling Game  BTC Rewards Video.webm",
@@ -75,6 +76,7 @@ export const GamesData = [
     },
     {
         name: 'Freeky Fall',
+        nameLine2:"Ball Game",
         logo: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Freeky%20Fall%20%20Ball%20Game%2Ffreekyfall.webp?alt=media&token=b03151cd-673d-4dbe-8b42-d604ca409e49',
         apk_file: '/public_assets/Freeky Fall_APK.apk',
         video_url:"/public_assets/Freeky Fall  Ball Game Video.webm",
