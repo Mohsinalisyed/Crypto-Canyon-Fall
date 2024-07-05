@@ -2,7 +2,7 @@ import redEggLogo from './assets/RedEggRolling/icon.jpeg'
 import freekyLogo from './assets/Freeky Fall/freekyfall.webp'
 import croptoTile from './assets/Crypto Tiles/cryptotiles.webp'
 import cryptoBlock from './assets/Crypto Block/crypto blocks.webp'
-import blockShooter from './assets/Block Shooter Puzzle Game/Icon.png'
+import blockShooter from './assets/Block Shooter Puzzle Game/Logo.png'
 import redEggSS1 from './assets/RedEggRolling/1.jpg'
 import redEggSS2 from './assets/RedEggRolling/2.jpg'
 
@@ -23,6 +23,7 @@ export const GamesData = [
         name: 'Block Shooter',
         nameLine2: 'Puzzle Game',
         logo: blockShooter,
+        apk_file:'/public_assets/SmashHero.apk',
         screen_shot: [
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Block%20Shooter%20Puzzle%20Game%2F1.jpg?alt=media&token=00282145-4bf0-4a89-97ee-29d09276eeca',
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Block%20Shooter%20Puzzle%20Game%2F2.jpg?alt=media&token=43f1d026-782c-4360-8275-7e4726c7539c',
@@ -40,6 +41,7 @@ export const GamesData = [
         name: 'Crypto Block',
         nameLine2: 'Puzzle Challenge',
         logo: cryptoBlock,
+        apk_file:"/public_assets/Crypto Blocks Puzzle Challenge_APK.apk",
         screen_shot: [
             redEggSS1,
             redEggSS2,
@@ -52,6 +54,7 @@ export const GamesData = [
         name: 'Crypto Tiles',
         nameLine2: 'Earn Real Bitcoin',
         logo: croptoTile,
+        apk_file:"/public_assets/Crypto Tiles.apk",
         screen_shot: [
             redEggSS1,
             redEggSS2,
@@ -65,6 +68,7 @@ export const GamesData = [
     {
         name: 'Freeky Fall',
         logo: freekyLogo,
+        apk_file:'/public_assets/Freeky Fall_APK.apk',
         screen_shot: [
             redEggSS1,
             redEggSS2,

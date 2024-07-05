@@ -18,7 +18,6 @@ const mainGameSS = [
   screenshot7
 ]
 const Slider: React.FC<Iprops> = ({ screen_shot }) => {
-  console.log(screen_shot,'screen_shot')
   return (
       <Container style={{marginTop:"32px"}}>
       

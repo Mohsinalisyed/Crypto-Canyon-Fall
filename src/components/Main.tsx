@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom';
 interface Iprops {
     name?: string;
     logo?: string;
-    nameLine2?:string
+    nameLine2?: string
+    apk_file?:string
 }
-const Main: React.FC<Iprops> = ({ name, logo, nameLine2 }) => {
+
+const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file }) => {
     const handleInstall = () => {
-        const apkUrl = '/Cryptocanyon.apk';
+        const apkUrl = apk_file ? apk_file : '/public_assets/Cryptocanyon.apk';
         const downloadLink = document.createElement('a');
         downloadLink.href = apkUrl;
         downloadLink.download = '';
@@ -25,7 +27,7 @@ const Main: React.FC<Iprops> = ({ name, logo, nameLine2 }) => {
             <MainContainer>
                 <MainInner>
                     <MainVideoBlock>
-                        <MainVideo src={'/videocrypto.mp4'} preload="auto" autoPlay muted loop />
+                        <MainVideo src={'/public_assets/videocrypto.mp4'} preload="auto" autoPlay muted loop />
                         <VideoCover />
                     </MainVideoBlock>
                     <MainInfo>
