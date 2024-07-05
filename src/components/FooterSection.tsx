@@ -21,14 +21,14 @@ const FooterSection = () => {
                     <FooterImage src="https://bc91231.com/googleplay/imgs/share.svg" alt="" />
                     <div>
                         <Desc>No data shared with third parties</Desc>
-                        <FooterLink href="###">Learn more about how developers declare sharing</FooterLink>
+                        <FooterLink href="###"><u>Learn more</u> about how developers declare sharing</FooterLink>
                     </div>
                 </FooterItem>
                 <FooterItem>
                     <FooterImage src="https://bc91231.com/googleplay/imgs/up.svg" alt="" />
                     <div>
                         <Desc>No data collected</Desc>
-                        <FooterLink href="###">Learn more about how developers declare collection</FooterLink>
+                        <FooterLink href="###"><u>Learn more</u> about how developers declare collection</FooterLink>
                     </div>
                 </FooterItem>
                 <FooterItem>
