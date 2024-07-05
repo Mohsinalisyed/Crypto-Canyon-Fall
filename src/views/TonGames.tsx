@@ -26,6 +26,8 @@ const TonGames = () => {
             <GameItem key={index} onClick={() => navigate('/viewgame', { state: { item } })}>
               <GameImage src={item.logo} alt={item.name} />
               <StyledTextH3>{item.name}</StyledTextH3>
+              {item.nameLine2 && <StyledTextH3>{item.nameLine2}</StyledTextH3>}
+
             </GameItem>
           ))}
         </MoreGamesWrapper>

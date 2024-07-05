@@ -1,20 +1,20 @@
 import React from 'react';
-import { Container } from '../lib';
 import { useLocation } from 'react-router-dom';
+import Main from '../components/Main';
+import Slider from '../components/Slider';
+import ContentSection from '../components/ContentSection';
+import FooterSection from '../components/FooterSection';
 
 const ViewGame = () => {
-    // Retrieve location and state using useLocation hook
     const location = useLocation();
     const { item } = location.state;
-
     return (
-        <Container>
-            <div>
-                <h2>{item.name}</h2>
-                <img src={item.logo} alt={item.name} style={{ width: '200px', borderRadius: '8px' }} />
-                <p>Additional details about the game...</p>
-            </div>
-        </Container>
+        <div>
+            <Main name={item.name} nameLine2={item.nameLine2} logo={item.logo} />
+            <Slider screen_shot={item.screen_shot} />
+            <ContentSection about={item.about} updated_on={item.updated_on} data_saftey={item.data_saftey} aboutLine2={item.aboutLine2} aboutLine3={item.aboutLine3} />
+            <FooterSection/>
+        </div>
     );
 };
 

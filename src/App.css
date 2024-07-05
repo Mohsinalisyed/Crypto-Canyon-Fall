@@ -23,17 +23,8 @@ h5 {
         }
 }
 
-.sliderWrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  overflow-x: hidden;
-  @media (max-width: 600px) {
-     flex-direction: column;
-     justify-content: center;
-    }
-}
 .slideImage {
+  max-width: 250px;
   height:400px;
   border-radius: 8px;
   margin-bottom: 16px;

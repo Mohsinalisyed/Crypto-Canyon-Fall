@@ -1,10 +1,15 @@
 import React from 'react';
 import { Mainheading, Text } from '../lib';
-import logo from '../assets/icon.png';
+import mainlogo from '../assets/icon.png';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Main = () => {
+interface Iprops {
+    name?: string;
+    logo?: string;
+    nameLine2?:string
+}
+const Main: React.FC<Iprops> = ({ name, logo, nameLine2 }) => {
     const handleInstall = () => {
         const apkUrl = '/Cryptocanyon.apk';
         const downloadLink = document.createElement('a');
@@ -24,11 +29,11 @@ const Main = () => {
                         <VideoCover />
                     </MainVideoBlock>
                     <MainInfo>
-                        <Mainheading>Crypto Canyon Fall</Mainheading>
+                        <Mainheading>{name ? name : 'Crypto Canyon Fall'} {nameLine2 && nameLine2 }</Mainheading>
                         <StyledLink to={'/tongames'}>Ton.Gamerz</StyledLink>
                         <StyledParagraph>Contains ads</StyledParagraph>
                         <StyledBcWrapper>
-                            <StyledLogo src={logo} alt='logo' />
+                            <StyledLogo src={logo ? logo : mainlogo} alt='logo' />
                             <div>
                                 <StyledH5>
                                     4.7 <StyledIcon className="material-icons">star</StyledIcon>

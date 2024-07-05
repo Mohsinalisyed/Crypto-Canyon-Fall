@@ -11,42 +11,62 @@ export const GamesData = [
     {
         name:'Red Egg Rolling',
         logo: redEggLogo ,
-        screen_short: [
-            { redEggSS1 },
-            {redEggSS2},
-        ]
+        screen_shot: [
+            redEggSS1 ,
+            redEggSS2,
+        ],
+        about:"The mighty Egg finds itself at the middle of dinosaur society. Its father is a dinosaur clan chief and always support it to grow slowly and hatch. But the egg intend to look for its mother.",
+        updated_on: 'Jun 12, 2024',
+        data_safety:'Safety starts with understanding how developers collect and share your data. Data privacy and security practices may vary based on your use, region, and age. The developer provided this information and may update it over time.',
     },
      {
-        name:'Block Shooter',
+         name: 'Block Shooter',
+         nameLine2:'Puzzle Game',
         logo: blockShooter ,
-        screen_short: [
-            { redEggSS1 },
-            {redEggSS2},
-        ]
+        screen_shot: [
+             redEggSS1 ,
+            redEggSS2,
+         ],
+        about:'Step into the vibrant and captivating world of "Block Shooter Puzzle Game"! This thrilling game combines strategy, precision, and fun as you use colorful balls to shoot and destroy blocks. Each level presents a unique challenge that will test your aiming skills and strategic thinking.',
+        aboutLine2: "Key Features:",
+         aboutLine3: "Engaging Gameplay: Control 4 colorful balls and aim to destroy blocks by shooting them. The goal is to clear all the blocks on the...",
+         updated_on: "Jun 28, 2024",
+        data_safety:'Safety starts with understanding how developers collect and share your data. Data privacy and security practices may vary based on your use, region, and age. The developer provided this information and may update it over time.'
     },
      {
-        name:'Crypto Block',
+         name: 'Crypto Block',
+         nameLine2:'Puzzle Challenge',
         logo: cryptoBlock ,
-        screen_short: [
-            { redEggSS1 },
-            {redEggSS2},
-        ]
+        screen_shot: [
+             redEggSS1 ,
+            redEggSS2,
+         ],
+         about: "Do you want to play games and win Bitcoin? Play Crypto Blocks: Earn Real BTC to be entered into a free game for a chance at winning a Bitcoin prize! You're right on time since the crypto blocks have returned. Become the first bitcoin holder! Prepare to pop the matching blocks and advance through each level. Enjoy playing the free-to-play and play-to-earn game Crypto Blocks. A delightful pop crypto block game that presents difficulties at every turn. To earn bitcoin, match the blocks and pop them. Bitcoin-generating games that you may play for free online",
+         updated_on: "Jun 27, 2024",
+        data_safety:"Safety starts with understanding how developers collect and share your data. Data privacy and security practices may vary based on your use, region, and age. The developer provided this information and may update it over time.",
     },
      {
-        name:'Crypto Tiles',
+         name: 'Crypto Tiles',
+         nameLine2:'Earn Real Bitcoin',
         logo: croptoTile,
-        screen_short: [
-            { redEggSS1 },
-            {redEggSS2},
-        ]
+        screen_shot: [
+            redEggSS1 ,
+            redEggSS2,
+         ],
+         about: "BTC Earn crypto: coin base earning app.",
+         aboutLine2: "Start playing Crypto Tiles today. A legendary puzzle game loved by millions of players around the world. Play & Earn concept used in the game. The more you play the more you earn. Break the tiles and earn bitcoin. Switch and match tiles in this puzzle adventure to progress to the next level for that winning feeling! Solve puzzles with quick thinking and smart moves.",
+         updated_on: "Jun 27, 2024",
+        data_safety:"Safety starts with understanding how developers collect and share your data. Data privacy and security practices may vary based on your use, region, and age. The developer provided this information and may update it over time.",
+        
     },
      {
         name:'Freeky Fall',
         logo: freekyLogo,
-        screen_short: [
-            { redEggSS1 },
-            {redEggSS2},
-        ]
+        screen_shot: [
+            redEggSS1 ,
+            redEggSS2,
+         ],
+        about:''
     }
      
 ]
