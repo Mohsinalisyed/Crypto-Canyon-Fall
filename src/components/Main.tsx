@@ -27,7 +27,7 @@ const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file }) => {
             <MainContainer>
                 <MainInner>
                     <MainVideoBlock>
-                        <MainVideo src={'/public_assets/videocrypto.mp4'} preload="auto" autoPlay muted loop />
+                    <MainVideo src={'/public_assets/videocrypto.webm'} preload="auto" autoPlay muted loop />
                         <VideoCover />
                     </MainVideoBlock>
                     <MainInfo>
