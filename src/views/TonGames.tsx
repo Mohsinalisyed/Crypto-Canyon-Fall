@@ -5,7 +5,7 @@ import { GamesData } from '../gamesdata';
 import { useNavigate } from 'react-router-dom';
 
 const TonGames = () => {
-  const navigate =useNavigate()
+  const navigate = useNavigate()
   return (
     <StyledContainer>
       <TonContainer>

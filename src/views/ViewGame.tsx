@@ -13,7 +13,7 @@ const ViewGame = () => {
             <Main name={item.name} nameLine2={item.nameLine2} logo={item.logo} />
             <Slider screen_shot={item.screen_shot} />
             <ContentSection about={item.about} updated_on={item.updated_on} data_saftey={item.data_saftey} aboutLine2={item.aboutLine2} aboutLine3={item.aboutLine3} />
-            <FooterSection/>
+            <FooterSection />
         </div>
     );
 };
