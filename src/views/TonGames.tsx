@@ -88,6 +88,7 @@ const TonText = styled.h4`
 
   @media (max-width: 1000px) {
     margin: 0;
+    font-size:24px;
   }
 `;
 
