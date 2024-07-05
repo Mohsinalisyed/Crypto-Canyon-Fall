@@ -45,13 +45,14 @@ const SliderWrapper = styled.div`
   display: flex;
 justify-content:space-between;
 overflow-x: auto;
+gap:20px;
 ` 
 
 const SlideImage = styled.img`
-   max-width: 250px;
+max-width: 250px;
 height: 400px;
-border - radius: 8px;
-margin - bottom: 16px;
+border-radius: 8px;
+margin-bottom: 16px;
 @media(max - width: 600px) {
   width: 90 %;
   height: auto;
