@@ -1,18 +1,18 @@
 import React from 'react';
 import './App.css';
-import Main from './components/Main';
-import Slider from './components/Slider';
-import ContentSection from './components/ContentSection';
-import FooterSection from './components/FooterSection';
+
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import TonGames from './views/TonGames';
+import Home from './views/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Main />
-      <Slider />
-      <ContentSection />
-      <FooterSection/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ton" element={<TonGames />} />
+        </Routes>
+    </BrowserRouter>
   );
 }
 

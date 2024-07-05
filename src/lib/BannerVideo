@@ -1,9 +1,0 @@
-import styled from "styled-components";
-
-export const BannerVideo = styled.video`
-  object-fit: cover;
-  position: absolute;
-  right: 0;
-  width: calc(2.55682 * min(100vw, 440px));
-  height: calc(1.43636 * min(100vw, 440px));
-`;
