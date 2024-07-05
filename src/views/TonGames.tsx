@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Text } from '../lib';
 import { GamesData } from '../gamesdata';
+import { useNavigate } from 'react-router-dom';
 
 const TonGames = () => {
+  const navigate =useNavigate()
   return (
     <StyledContainer>
       <TonContainer>
@@ -21,7 +23,7 @@ const TonGames = () => {
         <MoreGamesHeading>More by Ton.Gamerz</MoreGamesHeading>
         <MoreGamesWrapper>
           {GamesData.map((item, index) => (
-            <GameItem key={index}>
+            <GameItem key={index} onClick={() => navigate('/viewgame', { state: { item } })}>
               <GameImage src={item.logo} alt={item.name} />
               <StyledTextH3>{item.name}</StyledTextH3>
             </GameItem>
@@ -146,8 +148,9 @@ const StyledTextH3 = styled(TextH3)`
 
 const StyledLink = styled.a`
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
+  color: #15c;
 `;
 
 
