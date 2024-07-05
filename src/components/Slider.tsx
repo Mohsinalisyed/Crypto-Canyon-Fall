@@ -43,7 +43,7 @@ const Slider: React.FC<Iprops> = ({ screen_shot }) => {
 export default Slider
 const SliderWrapper = styled.div`
   display: flex;
-gap:40px;
+justify-content:space-between;
 overflow-x: auto;
 ` 
 
