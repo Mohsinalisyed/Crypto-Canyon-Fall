@@ -130,7 +130,7 @@ const GameImage = styled.img`
 `;
 
 const AdditionalInfoWrapper = styled.div`
-  padding-top: 32px;
+  padding: 32px 0;
 `;
 
 const StyledTonText = styled(TonText)`
