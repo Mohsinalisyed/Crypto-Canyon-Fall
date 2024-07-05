@@ -17,10 +17,10 @@ h5 {
     display: flex;
     align-items: center;
     gap: 30px;
-      flex-wrap: wrap;
-      @media (max-width: 600px) {
-          justify-content: center;
-        }
+    flex-wrap: wrap;
+    @media (max-width: 600px) {
+    justify-content: center;
+    }
 }
 
 .slideImage {
@@ -29,8 +29,8 @@ h5 {
   border-radius: 8px;
   margin-bottom: 16px;
   @media (max-width: 600px) {
-      width: 90%;
-      height: auto;
-      margin: 12px auto;
+  width: 90%;
+  height: auto;
+  margin: 12px auto;
     }
 }
