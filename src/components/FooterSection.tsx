@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Desc } from '../lib';
+import { Box, Container, Desc } from '../lib';
 
 
 const FooterImage = styled.img`
@@ -19,17 +19,17 @@ const FooterSection = () => {
             <FooterWrapper>
                 <FooterItem>
                     <FooterImage src="https://bc91231.com/googleplay/imgs/share.svg" alt="" />
-                    <div>
+                    <Box>
                         <Desc>No data shared with third parties</Desc>
                         <FooterLink href="###"><u>Learn more</u> about how developers declare sharing</FooterLink>
-                    </div>
+                    </Box>
                 </FooterItem>
                 <FooterItem>
                     <FooterImage src="https://bc91231.com/googleplay/imgs/up.svg" alt="" />
-                    <div>
+                    <Box>
                         <Desc>No data collected</Desc>
                         <FooterLink href="###"><u>Learn more</u> about how developers declare collection</FooterLink>
-                    </div>
+                    </Box>
                 </FooterItem>
                 <FooterItem>
                     <FooterImage src="https://bc91231.com/googleplay/imgs/lock.svg" alt="" />

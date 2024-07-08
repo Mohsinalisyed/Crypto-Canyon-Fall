@@ -6,11 +6,11 @@ import MainFooter from '../components/MainFooter';
 
 const Home = () => {
   return (
-    <div>
+    <React.Fragment>
       <Navbar />
       <MainSlider />
       <MainFooter/>
-    </div>
+    </React.Fragment>
   );
 };
 
