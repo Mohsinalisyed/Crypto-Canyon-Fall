@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mainheading, Text } from '../lib';
+import { Box, Mainheading, Text } from '../lib';
 import mainlogo from '../assets/icon.png';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -37,23 +37,23 @@ const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl }) =
                         <StyledParagraph>Contains ads</StyledParagraph>
                         <StyledBcWrapper>
                             <StyledLogo src={logo ? logo : mainlogo} alt='logo' />
-                            <div>
+                            <Box>
                                 <StyledH5>
                                     4.7 <StyledIcon className="material-icons">star</StyledIcon>
                                 </StyledH5>
                                 <Text>2K reviews</Text>
-                            </div>
-                            <div>
+                            </Box>
+                            <Box>
                                 <StyledH5>100K +</StyledH5>
                                 <Text>Downloads</Text>
-                            </div>
-                            <div>
+                            </Box>
+                            <Box>
                                 <img className="large" src="https://bc91231.com/googleplay/imgs/e.svg" alt='eicon' />
                                 <Text>Everyone</Text>
-                            </div>
+                            </Box>
                         </StyledBcWrapper>
                         <StyledBtnWrapper>
-                            <div className='shareWrapper'>
+                            <Box className='shareWrapper'>
                                 <StyledButton className='installbtn' onClick={handleInstall}>Install</StyledButton>
                                 <StyledShareOption onClick={handleInstall}>
                                     <StyledSvg className="f70z8e" fill='#6df378' viewBox="0 0 24 24">
@@ -67,10 +67,10 @@ const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl }) =
                                     </StyledSvg>
                                     <StyledP>Add to wishlist</StyledP>
                                 </StyledShareOption>
-                            </div>
+                            </Box>
                             <StyledButtonTrailer>
                                 <StyledIcon className="material-icons">play_arrow</StyledIcon>
-                                <div>Trailer</div>
+                                <Box>Trailer</Box>
                             </StyledButtonTrailer>
                         </StyledBtnWrapper>
                     </MainInfo>

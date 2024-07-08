@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackArrow, Container, ForwardArrow, Text, TextH3 } from '../lib';
+import { BackArrow, Box, Container, ForwardArrow, Text, TextH3 } from '../lib';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -87,25 +87,25 @@ const MainSlider = () => {
 
     return (
         <Container style={{ paddingTop: '72px' }}>
-            <div style={{ margin: '15px' }}>
+            <Box style={{ margin: '15px' }}>
                 <TextH3 style={{ fontWeight: '600', fontSize: '20px' }}>Play mobile games on the big screen</TextH3>
                 <Text style={{ color: '#5F6368', fontSize: '12px', fontWeight: '400' }}>Google Play Games on PC</Text>
-            </div>
+            </Box>
             <StyledSlider>
                 <Slider {...MYSliderSetting}>
                     {/* Map over slidesData array to generate slides */}
                     {slidesData.map((slide, index) => (
-                        <div key={index}>
+                        <Box key={index}>
                             <MainVideo src={slide.videoSrc} preload="auto" autoPlay muted loop />
-                            <div style={{ display: "flex", marginTop: "16px" }}>
+                            <Box style={{ display: "flex", marginTop: "16px" }}>
                                 <StyledLogo src={slide.logoSrc} alt={slide.logoAlt} onClick={() => navigate(slide.navigateToLogo)} />
-                                <div style={{ marginLeft: "16px" }}>
+                                <Box style={{ marginLeft: "16px" }}>
                                     <Text style={{ color: 'black', fontWeight: "500" }} onClick={() => navigate('/tongames')}>{slide.title}</Text>
                                     <Text style={{ color: '#5F6368' }}>{slide.category}</Text>
                                     <Text style={{ color: '#5F6368' }}>{slide.rating} <StyledIcon className="material-icons">star</StyledIcon></Text>
-                                </div>
-                            </div>
-                        </div>
+                                </Box>
+                            </Box>
+                        </Box>
                     ))}
                 </Slider>
             </StyledSlider>
@@ -128,6 +128,9 @@ const StyledSlider = styled.div`
             width: 410px !important;
             padding: 5px;
             cursor: pointer;
+             @media (max-width: 600px) {
+              width: 310px !important;
+              };
         }
     }
 `;
@@ -137,6 +140,9 @@ const MainVideo = styled.video`
     width: 400px;
     height: 250px;
     border-radius: 8px;
+    @media (max-width: 600px) {
+     width: 300px;
+     };
 `;
 
 const ArrowButton = styled.button`

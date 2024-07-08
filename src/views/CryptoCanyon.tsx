@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import { Box } from '../lib';
 
 // Lazy load components
 const LazyMain = React.lazy(() => import('../components/Main'));
@@ -9,14 +10,14 @@ const LazyFooterSection = React.lazy(() => import('../components/FooterSection')
 const CryptoCanyon
  = () => {
     return (
-        <div>
-            <Suspense fallback={<div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Loading...</div>}>
+        <Box>
+            <Suspense fallback={<Box style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Loading...</Box>}>
                 <LazyMain />
                 <LazySlider />
                 <LazyContentSection />
                 <LazyFooterSection />
             </Suspense>
-        </div>
+        </Box>
     );
 };
 
