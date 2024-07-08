@@ -4,8 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
-import { StyledLogo } from './Main';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import mainlogo from '../assets/icon.png';
 
 const ArrowLeft = ({ currentSlide, slideCount, ...props }:any) => {
@@ -42,6 +41,7 @@ const MainSlider = () => {
             logoSrc: mainlogo,
             logoAlt: 'logo1',
             navigateToLogo: '/crypto-canyon',
+            gameName:"Crypto Canyon Fall",
             title: 'Ton Gamerz',
             category: 'Sports',
             rating: '4.5',
@@ -100,8 +100,9 @@ const MainSlider = () => {
                             <Box style={{ display: "flex", marginTop: "16px" }}>
                                 <StyledLogo src={slide.logoSrc} alt={slide.logoAlt} onClick={() => navigate(slide.navigateToLogo)} />
                                 <Box style={{ marginLeft: "16px" }}>
-                                    <Text style={{ color: 'black', fontWeight: "500" }} onClick={() => navigate('/tongames')}>{slide.title}</Text>
-                                    <Text style={{ color: '#5F6368' }}>{slide.category}</Text>
+                                    <Text style={{ color: 'black', fontWeight: "500" }}>{slide.gameName}</Text>
+                                    <MainLink style={{ color: '#5F6368' }} to={'/tongames'}><u>{slide.title}</u></MainLink>
+                                    <Text style={{ color: '#5F6368' }} >{slide.category}</Text>
                                     <Text style={{ color: '#5F6368' }}>{slide.rating} <StyledIcon className="material-icons">star</StyledIcon></Text>
                                 </Box>
                             </Box>
@@ -171,4 +172,13 @@ const ForwardButton = styled(ArrowButton)`
 const StyledIcon = styled.i`
     font-size: 14px;
     margin-top: 4px;
+`;
+const StyledLogo = styled.img`
+  height: 90px;
+  border-radius: 16px;
+`;
+const MainLink = styled(Link)`
+  font-size: 14px;
+  text-decoration: none;
+  color: #5f6368;
 `;
