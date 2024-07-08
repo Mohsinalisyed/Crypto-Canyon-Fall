@@ -4,7 +4,7 @@ export const GamesData = [
         name: 'Egg Rolling Game',
         nameLine2:'BTC Rewards',
         logo: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Egg%20Rolling%20Game%20%20BTC%20Rewards%2Ficon.jpeg?alt=media&token=0864e65e-c30a-430d-8e82-ea31fc47fa45',
-        apk_file: "/public_assets/RedEgg.apk",
+        apk_file: "https://games-fi.s3.ap-south-1.amazonaws.com/website+games/RedEgg.apk",
         video_url:"https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Egg%20Rolling%20Game%20%20BTC%20Rewards%2FEgg%20Rolling%20Game%20%20BTC%20Rewards%20Video.mp4?alt=media&token=80014248-f809-4162-bda3-0af361a36d99",
         screen_shot: [
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Block%20Shooter%20Puzzle%20Game%2F1.jpg?alt=media&token=00282145-4bf0-4a89-97ee-29d09276eeca',
@@ -21,7 +21,7 @@ export const GamesData = [
         name: 'Block Shooter',
         nameLine2: 'Puzzle Game',
         logo: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Block%20Shooter%20Puzzle%20Game%2FIcon.3.png?alt=media&token=6a6f069f-55a4-4e09-b147-e0a29c3cd1db',
-        apk_file: '/public_assets/SmashHero.apk',
+        apk_file: 'https://games-fi.s3.ap-south-1.amazonaws.com/website+games/SmashHero+(1)+(1).apk',
         video_url:"https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Block%20Shooter%20Puzzle%20Game%2FBlock%20Shooter%20Puzzle%20Game%20Video.mp4?alt=media&token=9a501759-e82a-49e6-abb4-ad5e2a1f70fd",
         screen_shot: [
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Block%20Shooter%20Puzzle%20Game%2F1.jpg?alt=media&token=00282145-4bf0-4a89-97ee-29d09276eeca',
@@ -40,7 +40,7 @@ export const GamesData = [
         name: 'Crypto Block',
         nameLine2: 'Puzzle Challenge',
         logo: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Crypto%20Blocks%20Puzzle%20Challenge%2Fcrypto%20blocks.webp?alt=media&token=eec41cfa-8938-4ee0-a1a9-9eb970ad4b92',
-        apk_file: "/public_assets/Crypto Blocks Puzzle Challenge_APK.apk",
+        apk_file: "https://games-fi.s3.ap-south-1.amazonaws.com/website+games/Crypto+Blocks+Puzzle+Challenge_APK.apk",
         video_url:"https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Crypto%20Blocks%20Puzzle%20Challenge%2FCrypto%20Blocks%20Puzzle%20Challenge%20video.mp4?alt=media&token=32362f52-0cb5-40ba-8471-7b27b951f7c9",
         screen_shot: [
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Crypto%20Blocks%20Puzzle%20Challenge%2FblocksSS1.webp?alt=media&token=992bdd4d-6095-4c72-9705-57a774eed426',
@@ -58,7 +58,7 @@ export const GamesData = [
         name: 'Crypto Tiles',
         nameLine2: 'Earn Real Bitcoin',
         logo: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Crypto%20Tiles%20Earn%20Real%20Bitcoin%2Funnamed.webp?alt=media&token=26cedbac-eb6f-4ca8-8689-60d094a86495',
-        apk_file: "/public_assets/Crypto Tiles.apk",
+        apk_file: "https://games-fi.s3.ap-south-1.amazonaws.com/website+games/Crypto+Tiles.apk",
         video_url:"https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Crypto%20Tiles%20Earn%20Real%20Bitcoin%2FCrypto%20Tiles%20Earn%20Real%20Bitcoin%20Video.mp4?alt=media&token=4bf016fa-c7df-48c1-acc8-080e904effe8",
         screen_shot: [
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Crypto%20Tiles%20Earn%20Real%20Bitcoin%2Funnamed%20(2).webp?alt=media&token=0ee74aa0-4a8d-4b5e-8b3b-cfc39cea309e',
@@ -78,7 +78,7 @@ export const GamesData = [
         name: 'Freeky Fall',
         nameLine2:"Ball Game",
         logo: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Freeky%20Fall%20%20Ball%20Game%2Ffreekyfall.webp?alt=media&token=b03151cd-673d-4dbe-8b42-d604ca409e49',
-        apk_file: '/public_assets/Freeky Fall_APK.apk',
+        apk_file: 'https://games-fi.s3.ap-south-1.amazonaws.com/Freeky+Fall_APK.apk',
         video_url: " https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Freeky%20Fall%20%20Ball%20Game%2FFreeky%20Fall%20%20Ball%20Game%20Video.mp4?alt=media&token=9ad9c8df-e170-4fce-8b11-6f6d47bc7604",
         screen_shot: [
             'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Freeky%20Fall%20%20Ball%20Game%2F1_SS.webp?alt=media&token=e20df477-9029-4e60-b70b-b33d35448fe7',
