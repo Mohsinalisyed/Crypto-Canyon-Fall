@@ -102,8 +102,8 @@ const MainSlider = () => {
                                 <Box style={{ marginLeft: "16px" }}>
                                     <Text style={{ color: 'black', fontWeight: "500" }}>{slide.gameName}</Text>
                                     <MainLink style={{ color: '#5F6368' }} to={'/tongames'}><u>{slide.title}</u></MainLink>
-                                    <Text style={{ color: '#5F6368' }} >{slide.category}</Text>
-                                    <Text style={{ color: '#5F6368' }}>{slide.rating} <StyledIcon className="material-icons">star</StyledIcon></Text>
+                                    <Text style={{ color: '#5F6368',fontSize:"16px" }} >{slide.category}</Text>
+                                    <Text style={{ color: '#5F6368', fontSize: "16px" }}>{slide.rating} <StyledIcon className="material-icons">star</StyledIcon></Text>
                                 </Box>
                             </Box>
                         </Box>
@@ -171,7 +171,6 @@ const ForwardButton = styled(ArrowButton)`
 
 const StyledIcon = styled.i`
     font-size: 14px;
-    margin-top: 4px;
 `;
 const StyledLogo = styled.img`
   height: 90px;
