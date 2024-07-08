@@ -8,26 +8,46 @@ import { StyledLogo } from './Main';
 import { useNavigate } from 'react-router-dom';
 import mainlogo from '../assets/icon.png';
 
-const ArrowLeft = ({ currentSlide, slideCount, ...props } :any) => {
+const ArrowLeft = ({ currentSlide, slideCount, ...props }:any) => {
     const { onClick } = props;
+    // Show BackArrow only if not on the first slide
+    const isVisible = currentSlide !== 0;
+
     return (
-        <BackButton id="back-btn" onClick={onClick}>
+        <BackButton id="back-btn" onClick={onClick} style={{ display: isVisible ? 'block' : 'none' }}>
             <BackArrow />
         </BackButton>
     );
 };
 
-const ArrowRight = ({ currentSlide, slideCount, ...props }: any) => {
+const ArrowRight = ({ currentSlide, slideCount, ...props }:any) => {
     const { onClick } = props;
+    // Show ForwardArrow only if not on the last slide
+    const isVisible = currentSlide !== slideCount - 1;
+
     return (
-        <ForwardButton id="forward-btn" onClick={onClick}>
+        <ForwardButton id="forward-btn" onClick={onClick} style={{ display: isVisible ? 'block' : 'none' }}>
             <ForwardArrow />
         </ForwardButton>
     );
 };
 
 const MainSlider = () => {
-    const navigate =useNavigate()
+    const navigate = useNavigate();
+
+    // Array of data objects for each slide
+    const slidesData = [
+        {
+            videoSrc: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/crypto%20canyon%2FCrypto%20Canyon%20Crash%20Adventure%20Video.mp4?alt=media&token=e87fca50-0000-4bfd-a61e-aef6b74d9248',
+            logoSrc: mainlogo,
+            logoAlt: 'logo1',
+            navigateToLogo: '/crypto-canyon',
+            title: 'Ton Gamerz',
+            category: 'Sports',
+            rating: '4.5',
+        },
+    ];
+
     const MYSliderSetting = {
         dots: false,
         infinite: false,
@@ -73,25 +93,25 @@ const MainSlider = () => {
             </div>
             <StyledSlider>
                 <Slider {...MYSliderSetting}>
-                    <div>
-                        <MainVideo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/crypto%20canyon%2FCrypto%20Canyon%20Crash%20Adventure%20Video.mp4?alt=media&token=e87fca50-0000-4bfd-a61e-aef6b74d9248'} preload="auto" autoPlay muted loop />
-                        <div style={{display:"flex",marginTop:"16px"}}>
-                            <StyledLogo src={mainlogo} alt='logo' onClick={() => navigate('/crypto-canyon')} />
-                            <div style={{marginLeft:"16px"}}>
-                                <Text style={{ color: 'black', fontWeight: "500" }} onClick={() => navigate('/tongames')}>Ton Gamerz</Text>
-                                <Text style={{ color: '#5F6368' }}>Sports</Text>
-                                <Text style={{ color: '#5F6368' }}>4.5</Text>
+                    {/* Map over slidesData array to generate slides */}
+                    {slidesData.map((slide, index) => (
+                        <div key={index}>
+                            <MainVideo src={slide.videoSrc} preload="auto" autoPlay muted loop />
+                            <div style={{ display: "flex", marginTop: "16px" }}>
+                                <StyledLogo src={slide.logoSrc} alt={slide.logoAlt} onClick={() => navigate(slide.navigateToLogo)} />
+                                <div style={{ marginLeft: "16px" }}>
+                                    <Text style={{ color: 'black', fontWeight: "500" }} onClick={() => navigate('/tongames')}>{slide.title}</Text>
+                                    <Text style={{ color: '#5F6368' }}>{slide.category}</Text>
+                                    <Text style={{ color: '#5F6368' }}>{slide.rating} <StyledIcon className="material-icons">star</StyledIcon></Text>
+                                </div>
                             </div>
-                    </div>
-                    </div>
-                  
+                        </div>
+                    ))}
                 </Slider>
             </StyledSlider>
         </Container>
     );
 };
-
-
 
 export default MainSlider;
 
@@ -105,42 +125,44 @@ const StyledSlider = styled.div`
         .slick-slide {
             margin: 10px;
             box-sizing: border-box;
-            width:  410px !important;
-            padding:5px;
+            width: 410px !important;
+            padding: 5px;
             cursor: pointer;
-
-
         }
-    };     
+    }
 `;
+
 const MainVideo = styled.video`
-  object-fit: cover;
-  width:  400px;
-  height:  250px;
-  border-radius:8px;
+    object-fit: cover;
+    width: 400px;
+    height: 250px;
+    border-radius: 8px;
 `;
+
 const ArrowButton = styled.button`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: #fff;
-    height:60px;
-    width:60px;
-z-index:5;
-border-radius:100%;
-border:none;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 60px;
+    width: 60px;
+    z-index: 5;
+    border-radius: 100%;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
     outline: none;
-
 `;
 
-// Styled Back button
 const BackButton = styled(ArrowButton)`
     left: -25px;
 `;
 
-// Styled Forward button
 const ForwardButton = styled(ArrowButton)`
     right: 0;
+`;
+
+const StyledIcon = styled.i`
+    font-size: 14px;
+    margin-top: 4px;
 `;
