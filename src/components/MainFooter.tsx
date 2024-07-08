@@ -1,40 +1,77 @@
-import React from 'react'
-import { Container } from '../lib'
+import React from 'react';
+import styled from 'styled-components';
+import { Container } from '../lib';
+
+// Styled components for MainFooter
+const StyledContainer = styled(Container)`
+    padding-top: 200px;
+`;
+
+const Divider = styled.div`
+    border-top: 1px solid grey;
+    margin-top: 16px;
+`;
+
+const SectionWrapper = styled.div`
+    margin: 32px 0;
+    display: flex;
+`;
+
+const Section = styled.div`
+    margin-right: 100px;
+    color: rgb(95, 99, 104);
+    font-size: 14px;
+`;
+
+const SectionTitle = styled.strong`
+    font-weight: bold;
+`;
+
+const ListItem = styled.div`
+    padding: 10px 0;
+    font-weight: 400;
+`;
 
 const MainFooter = () => {
-  return (
-      <Container>
-          <div style={{ borderTop: "1px solid grey", marginTop: "200px" }}></div>
-          <div style={{margin:'32px 0' , display:"flex"}}>
-              <div>
-                  <strong>Google Play</strong>
-                  <br />
-                  Play Pass
-                  <br />
+    // Define the lists of items
+    const googlePlayItems = [
+        'Play Pass',
+        'Play Points',
+        'Gift cards',
+        'Redeem',
+        'Refund policy'
+    ];
 
-                  Play Points
-                  <br />
+    const kidsFamilyItems = [
+        'Parent Guide',
+        'Family sharing'
+    ];
 
-                  Gift cards
-                  <br />
+    return (
+        <StyledContainer>
+            <Divider />
+            <SectionWrapper>
+                {/* Google Play section */}
+                <Section>
+                    <SectionTitle>Google Play</SectionTitle>
+                    {googlePlayItems.map((item, index) => (
+                        <ListItem key={index}>
+                            {item}
+                        </ListItem>
+                    ))}
+                </Section>
+                {/* Kids & Family section */}
+                <Section>
+                    <SectionTitle>Kids & family</SectionTitle>
+                    {kidsFamilyItems.map((item, index) => (
+                        <ListItem key={index}>
+                            {item}
+                        </ListItem>
+                    ))}
+                </Section>
+            </SectionWrapper>
+        </StyledContainer>
+    );
+};
 
-                  Redeem
-                  <br />
-
-                  Refund policy
-              </div>
-              <div style={{paddingLeft:"100px"}}>
-              <strong>Kids & family</strong>
-                  <br />
-
-                  Parent Guide
-                  <br />
-
-                  Family sharing
-              </div>
-        </div>
-    </Container>
-  )
-}
-
-export default MainFooter
+export default MainFooter;

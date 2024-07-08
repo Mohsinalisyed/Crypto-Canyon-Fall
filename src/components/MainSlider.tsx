@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
 import { StyledLogo } from './Main';
 import { useNavigate } from 'react-router-dom';
+import mainlogo from '../assets/icon.png';
 
 const ArrowLeft = ({ currentSlide, slideCount, ...props } :any) => {
     const { onClick } = props;
@@ -72,61 +73,18 @@ const MainSlider = () => {
             </div>
             <StyledSlider>
                 <Slider {...MYSliderSetting}>
-                    <div onClick={() => navigate('/tongames')}>
+                    <div>
                         <MainVideo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/crypto%20canyon%2FCrypto%20Canyon%20Crash%20Adventure%20Video.mp4?alt=media&token=e87fca50-0000-4bfd-a61e-aef6b74d9248'} preload="auto" autoPlay muted loop />
                         <div style={{display:"flex",marginTop:"16px"}}>
-                            <StyledLogo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Egg%20Rolling%20Game%20%20BTC%20Rewards%2Ficon.jpeg?alt=media&token=0864e65e-c30a-430d-8e82-ea31fc47fa45'} alt='logo' />
+                            <StyledLogo src={mainlogo} alt='logo' onClick={() => navigate('/crypto-canyon')} />
                             <div style={{marginLeft:"16px"}}>
-                                <Text style={{ color: 'black',fontWeight:"500" }}>Ton Gamerz</Text>
+                                <Text style={{ color: 'black', fontWeight: "500" }} onClick={() => navigate('/tongames')}>Ton Gamerz</Text>
                                 <Text style={{ color: '#5F6368' }}>Sports</Text>
                                 <Text style={{ color: '#5F6368' }}>4.5</Text>
                             </div>
                     </div>
                     </div>
-                    <div onClick={() => navigate('/tongames')}>
-                        <MainVideo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/crypto%20canyon%2FCrypto%20Canyon%20Crash%20Adventure%20Video.mp4?alt=media&token=e87fca50-0000-4bfd-a61e-aef6b74d9248'} preload="auto" autoPlay muted loop />
-                        <div style={{ display: "flex", marginTop: "16px" }}>
-                            <StyledLogo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Egg%20Rolling%20Game%20%20BTC%20Rewards%2Ficon.jpeg?alt=media&token=0864e65e-c30a-430d-8e82-ea31fc47fa45'} alt='logo' />
-                            <div style={{ marginLeft: "16px" }}>
-                                <Text style={{ color: 'black', fontWeight: "500" }}>Ton Gamerz</Text>
-                                <Text style={{ color: '#5F6368' }}>Sports</Text>
-                                <Text style={{ color: '#5F6368' }}>4.5</Text>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <MainVideo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/crypto%20canyon%2FCrypto%20Canyon%20Crash%20Adventure%20Video.mp4?alt=media&token=e87fca50-0000-4bfd-a61e-aef6b74d9248'} preload="auto" autoPlay muted loop />
-                        <div style={{ display: "flex", marginTop: "16px" }}>
-                            <StyledLogo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Egg%20Rolling%20Game%20%20BTC%20Rewards%2Ficon.jpeg?alt=media&token=0864e65e-c30a-430d-8e82-ea31fc47fa45'} alt='logo' />
-                            <div style={{ marginLeft: "16px" }}>
-                                <Text style={{ color: 'black', fontWeight: "500" }}>Ton Gamerz</Text>
-                                <Text style={{ color: '#5F6368' }}>Sports</Text>
-                                <Text style={{ color: '#5F6368' }}>4.5</Text>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <MainVideo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/crypto%20canyon%2FCrypto%20Canyon%20Crash%20Adventure%20Video.mp4?alt=media&token=e87fca50-0000-4bfd-a61e-aef6b74d9248'} preload="auto" autoPlay muted loop />
-                        <div style={{ display: "flex", marginTop: "16px" }}>
-                            <StyledLogo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Egg%20Rolling%20Game%20%20BTC%20Rewards%2Ficon.jpeg?alt=media&token=0864e65e-c30a-430d-8e82-ea31fc47fa45'} alt='logo' />
-                            <div style={{ marginLeft: "16px" }}>
-                                <Text style={{ color: 'black', fontWeight: "500" }}>Ton Gamerz</Text>
-                                <Text style={{ color: '#5F6368' }}>Sports</Text>
-                                <Text style={{ color: '#5F6368' }}>4.5</Text>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <MainVideo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/crypto%20canyon%2FCrypto%20Canyon%20Crash%20Adventure%20Video.mp4?alt=media&token=e87fca50-0000-4bfd-a61e-aef6b74d9248'} preload="auto" autoPlay muted loop />
-                     <div style={{display:"flex",marginTop:"16px"}}>
-                            <StyledLogo src={'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/Egg%20Rolling%20Game%20%20BTC%20Rewards%2Ficon.jpeg?alt=media&token=0864e65e-c30a-430d-8e82-ea31fc47fa45'} alt='logo' />
-                            <div style={{marginLeft:"16px"}}>
-                                <Text style={{ color: 'black',fontWeight:"500" }}>Ton Gamerz</Text>
-                                <Text style={{ color: '#5F6368' }}>Sports</Text>
-                                <Text style={{ color: '#5F6368' }}>4.5</Text>
-                            </div>
-                    </div>
-                    </div>
+                  
                 </Slider>
             </StyledSlider>
         </Container>
