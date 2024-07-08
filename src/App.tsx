@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import TonGames from './views/TonGames';
 import Home from './views/Home';
 import ViewGame from './views/ViewGame';
+import CryptoCanyon from './views/CryptoCanyon';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/tongames" element={<TonGames />} />
         <Route path="/viewgame" element={<ViewGame />} />
+        <Route path="/crypto-canyon" element={<CryptoCanyon/>} />
+
         </Routes>
     </BrowserRouter>
   );
