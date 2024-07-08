@@ -172,7 +172,7 @@ display: flex;
     };
 `;
 
-const StyledLogo = styled.img`
+export const StyledLogo = styled.img`
   height: 70px;
   border-radius: 16px;
 `;
