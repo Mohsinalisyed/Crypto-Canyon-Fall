@@ -9,11 +9,10 @@ import { useGameData } from './utlis/api';
 
 function App() {
   const { data: gameData } = useGameData();
-  console.log(gameData, 'gameData ')
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home gameData={gameData } />} />
         <Route path="/tongames" element={<TonGames />} />
         <Route path="/viewgame" element={<ViewGame />} />
         <Route path="/crypto-canyon" element={<CryptoCanyon/>} />

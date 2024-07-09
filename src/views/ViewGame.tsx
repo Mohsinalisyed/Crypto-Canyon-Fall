@@ -10,14 +10,14 @@ const LazyFooterSection = React.lazy(() => import('../components/FooterSection')
 
 const ViewGame = () => {
     const location = useLocation();
-    const { item } = location.state;
-
+    const { slide } = location.state;
+   
     return (
         <Box>
             <Suspense fallback={<Box style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Loading...</Box>}>
-                <LazyMain name={item.name} nameLine2={item.nameLine2} logo={item.logo} apk_file={item.apk_file} videoUrl={item.video_url} />
-                <LazySlider screen_shot={item.screen_shot} />
-                <LazyContentSection about={item.about} updated_on={item.updated_on} data_saftey={item.data_saftey} aboutLine2={item.aboutLine2} aboutLine3={item.aboutLine3} />
+                <LazyMain name={slide.name} logo={slide.icon.data.attributes.url} apk_file={slide.apk.data.attributes.url} videoUrl={slide.video.data[0].attributes.url} rating={slide.rating} download={slide.downloads } />
+                <LazySlider screen_shot={slide.screenshots.data} />
+                <LazyContentSection about={slide.description} updated_on={slide.publishedAt} data_saftey={slide.data_saftey} />
                 <LazyFooterSection />
             </Suspense>
         </Box>

@@ -5,8 +5,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
 import { Link, useNavigate } from 'react-router-dom';
-import mainlogo from '../assets/icon.png';
 
+interface Iprops {
+    gameData: any
+}
 const ArrowLeft = ({ currentSlide, slideCount, ...props }: any) => {
     const { onClick } = props;
     const isVisible = currentSlide !== 0;
@@ -28,21 +30,10 @@ const ArrowRight = ({ currentSlide, slideCount, ...props }: any) => {
     );
 };
 
-const MainSlider = () => {
+const MainSlider: React.FC<Iprops> = ({ gameData }) => {
     const navigate = useNavigate();
-
-    const slidesData = [
-        {
-            videoSrc: 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/crypto%20canyon%2FCrypto%20Canyon%20Crash%20Adventure%20Video.mp4?alt=media&token=e87fca50-0000-4bfd-a61e-aef6b74d9248',
-            logoSrc: mainlogo,
-            logoAlt: 'logo1',
-            navigateToLogo: '/crypto-canyon',
-            gameName: "Crypto Canyon Fall",
-            title: 'Ton Gamerz',
-            category: 'Sports',
-            rating: '4.5',
-        },
-    ];
+    
+    const array = gameData && gameData.data.map((item: any) => item.attributes)
 
     const MYSliderSetting = {
         dots: false,
@@ -89,14 +80,14 @@ const MainSlider = () => {
             </Box>
             <StyledSlider>
                 <Slider {...MYSliderSetting}>
-                    {slidesData.map((slide, index) => (
+                    {array && array.map((slide:any, index:number) => (
                         <Box key={index}>
-                            <MainVideo src={slide.videoSrc} preload="auto" autoPlay muted loop />
+                            <MainVideo src={slide.video.data[0].attributes.url} preload="auto" autoPlay muted loop />
                             <Box style={{ display: "flex", marginTop: "16px" }}>
-                                <StyledLogo src={slide.logoSrc} alt={slide.logoAlt} onClick={() => navigate(slide.navigateToLogo)} />
+                                <StyledLogo src={slide.icon.data.attributes.url} alt={slide.icon.data.attributes.url} onClick={() => navigate('/viewgame', { state: { slide } })} />
                                 <Box style={{ marginLeft: "16px" }}>
-                                    <Text style={{ color: 'black', fontWeight: "500" }}>{slide.gameName}</Text>
-                                    <MainLink style={{ color: '#5F6368' }} to={'/tongames'}><u>{slide.title}</u></MainLink>
+                                    <Text style={{ color: 'black', fontWeight: "500" }}>{slide.name}</Text>
+                                    <MainLink style={{ color: '#5F6368' }} to={'/tongames'}><u>{slide.users_permissions_user.data.attributes.username}</u></MainLink>
                                     <Text style={{ color: '#5F6368', fontSize: "16px" }} >{slide.category}</Text>
                                     <Text style={{ color: '#5F6368', fontSize: "16px" }}>{slide.rating} <StyledIcon className="material-icons">star</StyledIcon></Text>
                                 </Box>

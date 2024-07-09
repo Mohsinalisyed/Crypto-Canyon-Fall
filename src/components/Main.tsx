@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Mainheading, Text } from '../lib';
-import mainlogo from '../assets/icon.png';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { formatNumber } from '../utlis/function';
 
 interface Iprops {
   name?: string;
@@ -10,9 +10,11 @@ interface Iprops {
   nameLine2?: string
   apk_file?: string
   videoUrl?: string
+  rating?: string
+  download?:number
 }
 
-const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl }) => {
+const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl,rating,download}) => {
   const handleInstall = () => {
     const apkUrl = apk_file ? apk_file : 'https://games-fi.s3.ap-south-1.amazonaws.com/website+games/canyonFall_APK.apk';
     const downloadLink = document.createElement('a');
@@ -32,19 +34,19 @@ const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl }) =
             <VideoCover />
           </MainVideoBlock>
           <MainInfo>
-            <Mainheading>{name ? name : 'Crypto Canyon Fall'} {nameLine2 && nameLine2}</Mainheading>
+            <Mainheading>{name ?? ''}</Mainheading>
             <StyledLink to={'/tongames'}>Ton.Gamerz</StyledLink>
             <StyledParagraph>Contains ads</StyledParagraph>
             <StyledBcWrapper>
-              <StyledLogo src={logo ? logo : mainlogo} alt='logo' />
+              <StyledLogo src={logo ?? ''} alt='logo' />
               <Box>
                 <StyledH5>
-                  4.7 <StyledIcon className="material-icons">star</StyledIcon>
+                  {rating }<StyledIcon className="material-icons">star</StyledIcon>
                 </StyledH5>
                 <Text>2K reviews</Text>
               </Box>
               <Box>
-                <StyledH5>100K +</StyledH5>
+                <StyledH5>{formatNumber(download ?? 0) }</StyledH5>
                 <Text>Downloads</Text>
               </Box>
               <Box>
