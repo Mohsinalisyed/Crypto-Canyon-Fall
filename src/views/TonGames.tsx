@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Text } from '../lib';
+import { Container } from '../lib';
 import { useLocation, useNavigate } from 'react-router-dom';
 interface Iprops {
   gameData:any
