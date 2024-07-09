@@ -15,9 +15,9 @@ const TonGames: React.FC<Iprops> = ({ gameData }) => {
       <TonContainer>
         <TonLogoContainer>
           <PlayButton>
-            <PlayButtonText>PLAY</PlayButtonText>
+            <PlayButtonText src={slide.users_permissions_user.data.attributes.icon.data.attributes.url } alt='icon'/>
           </PlayButton>
-          <TonText>Ton.Gamerz</TonText>
+          <TonText>{slide.users_permissions_user.data.attributes.username}</TonText>
         </TonLogoContainer>
         <PlayDescription>
           <StyledTextH3>{slide.users_permissions_user.data.attributes.slogan}</StyledTextH3>
@@ -26,7 +26,7 @@ const TonGames: React.FC<Iprops> = ({ gameData }) => {
       <GamesBox>
         <MoreGamesHeading>More by {slide.users_permissions_user.data.attributes.username}</MoreGamesHeading>
         <MoreGamesWrapper>
-          {array && array.map((slide:any, index:number) => (
+          {array && array.filter((item: any) => item.users_permissions_user.data.attributes.username === slide.users_permissions_user.data.attributes.username).map((slide:any, index:number) => (
             <GameItem key={index} onClick={() => navigate('/viewgame', { state: { slide } })}>
               <GameImage src={slide.icon.data.attributes.url} alt={slide.icon.data.attributes.url} />
               <StyledTextH3>{slide.name}</StyledTextH3>
@@ -78,9 +78,9 @@ const PlayButton = styled.div`
   margin-right: 20px;
 `;
 
-const PlayButtonText = styled(Text)`
-  color: skyblue;
-  font-weight: 700;
+const PlayButtonText = styled.img`
+  width: 60px;
+  height: 60px;
 `;
 
 const TonText = styled.h4`
@@ -124,6 +124,8 @@ const GameItem = styled.div`
   margin-right: 20px;
   margin-bottom: 20px;
   cursor:pointer;
+  max-width:120px
+
 `;
 
 const GameImage = styled.img`
