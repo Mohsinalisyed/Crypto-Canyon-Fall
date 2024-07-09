@@ -32,7 +32,6 @@ const ArrowRight = ({ currentSlide, slideCount, ...props }: any) => {
 
 const MainSlider: React.FC<Iprops> = ({ gameData }) => {
     const navigate = useNavigate();
-    
     const array = gameData && gameData.data.map((item: any) => item.attributes)
 
     const MYSliderSetting = {
@@ -80,7 +79,7 @@ const MainSlider: React.FC<Iprops> = ({ gameData }) => {
             </Box>
             <StyledSlider>
                 <Slider {...MYSliderSetting}>
-                    {array &&array.map((slide:any, index:number) => (
+                    {array && array.filter((item: any) => item.is_featured).map((slide: any, index: number) => (
                         <Box key={index}>
                             <MainVideo src={slide.video.data[0].attributes.url} preload="auto" autoPlay muted loop />
                             <Box style={{ display: "flex", marginTop: "16px" }}>
