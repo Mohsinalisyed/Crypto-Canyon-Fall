@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Text } from '../lib';
-import { GamesData } from '../gamesdata';
-import { useNavigate } from 'react-router-dom';
-
-const TonGames = () => {
+import { useLocation, useNavigate } from 'react-router-dom';
+interface Iprops {
+  gameData:any
+}
+const TonGames: React.FC<Iprops> = ({ gameData }) => {
   const navigate = useNavigate()
+  const location = useLocation();
+  const { slide } = location.state;
+  const array = gameData && gameData.data.map((item: any) => item.attributes)
   return (
     <StyledContainer>
       <TonContainer>
@@ -16,17 +20,16 @@ const TonGames = () => {
           <TonText>Ton.Gamerz</TonText>
         </TonLogoContainer>
         <PlayDescription>
-          <StyledTextH3>Play the Best Games on Google Play.</StyledTextH3>
+          <StyledTextH3>{slide.users_permissions_user.data.attributes.slogan}</StyledTextH3>
         </PlayDescription>
       </TonContainer>
       <GamesBox>
-        <MoreGamesHeading>More by Ton.Gamerz</MoreGamesHeading>
+        <MoreGamesHeading>More by {slide.users_permissions_user.data.attributes.username}</MoreGamesHeading>
         <MoreGamesWrapper>
-          {GamesData.map((item, index) => (
-            <GameItem key={index} onClick={() => navigate('/viewgame', { state: { item } })}>
-              <GameImage src={item.logo} alt={item.name} />
-              <StyledTextH3>{item.name}</StyledTextH3>
-              {item.nameLine2 && <StyledTextH3>{item.nameLine2}</StyledTextH3>}
+          {array && array.map((slide:any, index:number) => (
+            <GameItem key={index} onClick={() => navigate('/viewgame', { state: { slide } })}>
+              <GameImage src={slide.icon.data.attributes.url} alt={slide.icon.data.attributes.url} />
+              <StyledTextH3>{slide.name}</StyledTextH3>
             </GameItem>
           ))}
         </MoreGamesWrapper>

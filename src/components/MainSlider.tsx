@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 interface Iprops {
     gameData: any
@@ -80,14 +80,14 @@ const MainSlider: React.FC<Iprops> = ({ gameData }) => {
             </Box>
             <StyledSlider>
                 <Slider {...MYSliderSetting}>
-                    {array && array.map((slide:any, index:number) => (
+                    {array &&array.map((slide:any, index:number) => (
                         <Box key={index}>
                             <MainVideo src={slide.video.data[0].attributes.url} preload="auto" autoPlay muted loop />
                             <Box style={{ display: "flex", marginTop: "16px" }}>
                                 <StyledLogo src={slide.icon.data.attributes.url} alt={slide.icon.data.attributes.url} onClick={() => navigate('/viewgame', { state: { slide } })} />
                                 <Box style={{ marginLeft: "16px" }}>
                                     <Text style={{ color: 'black', fontWeight: "500" }}>{slide.name}</Text>
-                                    <MainLink style={{ color: '#5F6368' }} to={'/tongames'}><u>{slide.users_permissions_user.data.attributes.username}</u></MainLink>
+                                    <Text style={{ color: '#5F6368' }} onClick={() => navigate('/tongames', { state: { slide } })}><u>{slide.users_permissions_user.data.attributes.username}</u></Text >
                                     <Text style={{ color: '#5F6368', fontSize: "16px" }} >{slide.category}</Text>
                                     <Text style={{ color: '#5F6368', fontSize: "16px" }}>{slide.rating} <StyledIcon className="material-icons">star</StyledIcon></Text>
                                 </Box>
@@ -161,9 +161,4 @@ const StyledIcon = styled.i`
 const StyledLogo = styled.img`
   height: 90px;
   border-radius: 16px;
-`;
-const MainLink = styled(Link)`
-  font-size: 14px;
-  text-decoration: none;
-  color: #5f6368;
 `;

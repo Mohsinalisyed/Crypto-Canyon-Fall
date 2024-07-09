@@ -11,10 +11,11 @@ interface Iprops {
   apk_file?: string
   videoUrl?: string
   rating?: string
-  download?:number
+  download?: number
+  username?:string
 }
 
-const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl,rating,download}) => {
+const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl, rating, download, username }) => {
   const handleInstall = () => {
     const apkUrl = apk_file ? apk_file : 'https://games-fi.s3.ap-south-1.amazonaws.com/website+games/canyonFall_APK.apk';
     const downloadLink = document.createElement('a');
@@ -30,12 +31,12 @@ const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl,rati
       <MainContainer>
         <MainInner>
           <MainVideoBlock>
-            <MainVideo src={videoUrl ? videoUrl : 'https://firebasestorage.googleapis.com/v0/b/relaxeum-8755b.appspot.com/o/crypto%20canyon%2FCrypto%20Canyon%20Crash%20Adventure%20Video.mp4?alt=media&token=e87fca50-0000-4bfd-a61e-aef6b74d9248'} preload="auto" autoPlay muted loop />
+            <MainVideo src={videoUrl ?? ''} preload="auto" autoPlay muted loop />
             <VideoCover />
           </MainVideoBlock>
           <MainInfo>
             <Mainheading>{name ?? ''}</Mainheading>
-            <StyledLink to={'/tongames'}>Ton.Gamerz</StyledLink>
+            <StyledLink to={'/tongames'}>{username }</StyledLink>
             <StyledParagraph>Contains ads</StyledParagraph>
             <StyledBcWrapper>
               <StyledLogo src={logo ?? ''} alt='logo' />
