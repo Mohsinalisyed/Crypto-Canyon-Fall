@@ -7,6 +7,7 @@ const TonGames = () => {
   const navigate = useNavigate()
   const location = useLocation();
   const { slide } = location.state;
+  console.log(slide,'slide')
   return (
     <StyledContainer>
       <TonContainer>
@@ -17,7 +18,7 @@ const TonGames = () => {
           <TonText>{!!slide.username ? slide.username : slide.user_name}</TonText>
         </TonLogoContainer>
         <PlayDescription>
-          <StyledTextH3>{!!slide.sologan ? slide.sologan : slide.slogan}</StyledTextH3>
+          <StyledTextH3>{!!slide.solgan ? slide.solgan : slide.slogan}</StyledTextH3>
         </PlayDescription>
       </TonContainer>
       <GamesBox>

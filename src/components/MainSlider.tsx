@@ -38,7 +38,8 @@ const MainSlider: React.FC<Iprops> = ({ userData }) => {
         const res = {
             username: slide.username,
             icon: slide.icon,
-            all_games:slide.games,
+            all_games: slide.games,
+            solgan: slide.slogan,
             game: featuredGame || defaultGame
         }
         return res;
