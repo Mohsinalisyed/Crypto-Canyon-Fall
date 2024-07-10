@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, TextH3 as OriginalTextH3, Desc as OriginalDesc } from '../lib';
-import { formatDate } from '../utlis/function';
+import { formatDate } from '../utlis';
 
 interface Iprops {
     about?: string;

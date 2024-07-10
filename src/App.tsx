@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import TonGames from './views/TonGames';
 import Home from './views/Home';
 import ViewGame from './views/ViewGame';
-import { useGameData } from './utlis/api';
+import { useGameData } from './utlis';
 
 function App() {
   const { data: gameData } = useGameData();

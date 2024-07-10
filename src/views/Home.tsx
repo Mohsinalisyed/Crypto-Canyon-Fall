@@ -2,8 +2,9 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import MainSlider from '../components/MainSlider';
 import MainFooter from '../components/MainFooter';
+import { GameArray } from '../utlis';
 interface Iprops {
-  gameData:any
+  gameData: GameArray
 }
 
 const Home: React.FC<Iprops> = ({ gameData }) => {
