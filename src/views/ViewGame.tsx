@@ -10,26 +10,27 @@ const LazyFooterSection = React.lazy(() => import('../components/FooterSection')
 
 const ViewGame = () => {
     const location = useLocation();
-    const { slide } = location.state;
+    const { slide , item, username} = location.state;
+
     return (
         <Box>
             <Suspense fallback={<Box style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Loading...</Box>}>
                 <LazyMain
-                    name={slide.game.name}
-                    logo={slide.game.icon.url}
-                    apk_file={slide.game.apk.url}
-                    videoUrl={slide.game.video[0].url}
-                    download={slide.game.downloads}
-                    rating={slide.game.rating}
-                    user_name={slide.username}
-                    solgan={slide.slogan}
-                    devIcon={slide.icon}
-                    all_games={slide.all_games}
+                    name={item.name}
+                    logo={item.icon.url}
+                    apk_file={item.apk.url}
+                    videoUrl={item.video[0].url}
+                    download={item.downloads}
+                    rating={item.rating}
+                    user_name={username}
+                    solgan={item.slogan}
+                    devIcon={item.icon}
+                    all_games={item.all_games}
                     slide={slide}
                 />
                 
-                <LazySlider screen_shot={slide.game.screenshots} />
-                <LazyContentSection about={slide.game.description} updated_on={slide.game.publishedAt} data_saftey={slide.game.data_saftey} />
+                <LazySlider screen_shot={item.screenshots} />
+                <LazyContentSection about={item.description} updated_on={item.publishedAt} data_saftey={item.data_saftey} />
                 <LazyFooterSection />
             </Suspense>
         </Box>

@@ -26,7 +26,7 @@ const TonGames = () => {
         <MoreGamesWrapper>
           {
             slide && slide.all_games.map((item: any, index: number) =>  (
-                <GameItem key={index} onClick={() => navigate('/viewgame', { state: { slide } })}>
+              <GameItem key={index} onClick={() => navigate('/viewgame', { state: { slide, item, username: !!slide.username ? slide.username : slide.user_name } })}>
                   <GameImage src={item.icon?.url} alt={slide.icon?.url} />
                   <StyledTextH3>{item.name}</StyledTextH3>
                 </GameItem>
