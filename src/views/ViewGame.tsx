@@ -11,7 +11,7 @@ const LazyFooterSection = React.lazy(() => import('../components/FooterSection')
 const ViewGame = () => {
     const location = useLocation();
     const { slide , item, username} = location.state;
-
+    console.log(slide)
     return (
         <Box>
             <Suspense fallback={<Box style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Loading...</Box>}>

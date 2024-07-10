@@ -1,9 +1,10 @@
 import React from 'react'
 import { Container } from '../lib'
 import styled from 'styled-components'
+import { Screenshot } from '../utlis'
 
 interface Iprops {
-  screen_shot?: any
+  screen_shot?: Screenshot[]
 }
 
 const Slider: React.FC<Iprops> = ({ screen_shot }) => {
@@ -12,7 +13,7 @@ const Slider: React.FC<Iprops> = ({ screen_shot }) => {
       
         {screen_shot ? (
         <SliderWrapper>
-         { screen_shot.map((img:any, index:number) => (
+          {screen_shot.map((img: Screenshot, index:number) => (
            <SlideImage src={img.url} alt={`screenshot${index}`} className='slideImage' key={index} />
          ))}
         </SliderWrapper>

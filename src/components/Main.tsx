@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Mainheading, Text } from '../lib';
 import styled from 'styled-components';
-import { formatNumber } from '../utlis';
+import { formatNumber, Game } from '../utlis';
 import { useNavigate } from 'react-router-dom';
 
 interface Iprops {
@@ -14,14 +14,14 @@ interface Iprops {
   user_name?: string
   devIcon?: string
   solgan?: string
-  all_games?: any
+  all_games?: Game[]
   slide?:any
 }
 
-const Main: React.FC<Iprops> = ({ name, logo, apk_file, videoUrl, rating, download, user_name, devIcon, solgan, all_games, slide }) => {
+const Main: React.FC<Iprops> = ({ name, logo, apk_file, videoUrl, rating, download, user_name, slide }) => {
   const navigate = useNavigate();
   const handleInstall = () => {
-    const apkUrl = apk_file ? apk_file : 'https://games-fi.s3.ap-south-1.amazonaws.com/website+games/canyonFall_APK.apk';
+    const apkUrl = apk_file ? apk_file : '';
     const downloadLink = document.createElement('a');
     downloadLink.href = apkUrl;
     downloadLink.download = '';

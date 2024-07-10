@@ -11,7 +11,7 @@
         }
         return num.toString();
 };
-export const formatDate =(dateString:any) =>{
+export const formatDate =(dateString:string) =>{
     const date = new Date(dateString);
 
     // Extract date components
