@@ -2,45 +2,35 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container } from '../lib';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Game, GameArray } from '../utlis';
-interface Iprops {
-  gameData: GameArray
-}
-const TonGames: React.FC<Iprops> = ({ gameData }) => {
+
+const TonGames = () => {
   const navigate = useNavigate()
   const location = useLocation();
   const { slide } = location.state;
-  const array = gameData && gameData.data.map((item: Game) => item.attributes)
-  console.log(slide.devIcon ? slide.devIcon : slide.users_permissions_user.data.attributes.icon.data.attributes.url,'icon')
   return (
     <StyledContainer>
       <TonContainer>
         <TonLogoContainer>
           <PlayButton>
-            <PlayButtonText src={!!slide.devIcon ? slide.devIcon : slide.users_permissions_user.data.attributes.icon.data.attributes.url} alt='icon'/>
+            <PlayButtonText src={!!slide.devIcon ? slide.devIcon : slide.icon.url} alt='icon'/>
           </PlayButton>
-          <TonText>{!!slide.username ? slide.username : slide.users_permissions_user.data.attributes.username}</TonText>
+          <TonText>{!!slide.username ? slide.username : slide.user_name}</TonText>
         </TonLogoContainer>
         <PlayDescription>
-          <StyledTextH3>{!!slide.sologan ? slide.sologan : slide.users_permissions_user.data.attributes.slogan}</StyledTextH3>
+          <StyledTextH3>{!!slide.sologan ? slide.sologan : slide.slogan}</StyledTextH3>
         </PlayDescription>
       </TonContainer>
       <GamesBox>
-        <MoreGamesHeading>More by {!!slide.username ? slide.username : slide.users_permissions_user.data.attributes.username}</MoreGamesHeading>
+        <MoreGamesHeading>More by {!!slide.username ? slide.username : slide.user_name}</MoreGamesHeading>
         <MoreGamesWrapper>
           {
-            array &&
-            array
-              .filter((item: any) => {
-                const user = item.users_permissions_user?.data?.attributes?.username;
-                return user === (!!slide.username ? slide.username : slide.users_permissions_user?.data?.attributes?.username);
-              })
-              .map((slide: any, index: number) => (
+            slide && slide.all_games.map((item: any, index: number) =>  (
                 <GameItem key={index} onClick={() => navigate('/viewgame', { state: { slide } })}>
-                  <GameImage src={slide.icon?.data?.attributes?.url} alt={slide.icon?.data?.attributes?.url} />
-                  <StyledTextH3>{slide.name}</StyledTextH3>
+                  <GameImage src={item.icon?.url} alt={slide.icon?.url} />
+                  <StyledTextH3>{item.name}</StyledTextH3>
                 </GameItem>
-              ))
+              )
+          )
 
        }
         </MoreGamesWrapper>

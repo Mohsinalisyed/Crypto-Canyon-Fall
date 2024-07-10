@@ -11,13 +11,24 @@ const LazyFooterSection = React.lazy(() => import('../components/FooterSection')
 const ViewGame = () => {
     const location = useLocation();
     const { slide } = location.state;
-   
+    console.log(slide,'slide####slide')
     return (
         <Box>
             <Suspense fallback={<Box style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Loading...</Box>}>
-                <LazyMain name={slide.name} logo={slide.icon.data.attributes.url} apk_file={slide.apk.data.attributes.url} videoUrl={slide.video.data[0].attributes.url} rating={slide.rating} download={slide.downloads} username={slide.users_permissions_user.data.attributes.username} devIcon={slide.users_permissions_user.data.attributes.icon.data.attributes.url} sologan={slide.users_permissions_user.data.attributes.slogan } />
-                <LazySlider screen_shot={slide.screenshots.data} />
-                <LazyContentSection about={slide.description} updated_on={slide.publishedAt} data_saftey={slide.data_saftey} />
+                <LazyMain
+                    name={slide.game.name}
+                    logo={slide.game.icon.url}
+                    apk_file={slide.game.apk.url}
+                    videoUrl={slide.game.video[0].url}
+                    download={slide.game.downloads}
+                    rating={slide.game.rating}
+                    user_name={slide.username}
+                    sologan={'soga'}
+                    devIcon={slide.icon}
+                    all_games={slide.all_games} />
+                
+                <LazySlider screen_shot={slide.game.screenshots} />
+                <LazyContentSection about={slide.game.description} updated_on={slide.game.publishedAt} data_saftey={slide.game.data_saftey} />
                 <LazyFooterSection />
             </Suspense>
         </Box>
