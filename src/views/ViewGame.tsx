@@ -22,7 +22,7 @@ const ViewGame = () => {
                     download={slide.game.downloads}
                     rating={slide.game.rating}
                     user_name={slide.username}
-                    sologan={'soga'}
+                    solgan={slide.slogan}
                     devIcon={slide.icon}
                     all_games={slide.all_games}
                     slide={slide}
