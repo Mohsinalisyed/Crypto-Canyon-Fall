@@ -5,9 +5,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
 import {  useNavigate } from 'react-router-dom';
+import { Game, GameArray } from '../utlis';
 
 interface Iprops {
-    gameData: any
+    gameData: GameArray
 }
 const ArrowLeft = ({ currentSlide, slideCount, ...props }: any) => {
     const { onClick } = props;
@@ -32,7 +33,7 @@ const ArrowRight = ({ currentSlide, slideCount, ...props }: any) => {
 
 const MainSlider: React.FC<Iprops> = ({ gameData }) => {
     const navigate = useNavigate();
-    const array = gameData && gameData.data.map((item: any) => item.attributes)
+    const array = gameData && gameData.data.map((item: Game) => item.attributes)
 
     const MYSliderSetting = {
         dots: false,

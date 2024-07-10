@@ -1,21 +1,34 @@
 import React from 'react';
 import { Box, Mainheading, Text } from '../lib';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { formatNumber } from '../utlis/function';
+import { formatNumber } from '../utlis';
+import { useNavigate } from 'react-router-dom';
 
 interface Iprops {
   name?: string;
   logo?: string;
-  nameLine2?: string
   apk_file?: string
   videoUrl?: string
   rating?: string
   download?: number
-  username?:string
+  username?: string
+  devIcon?: string
+  sologan?:string
 }
 
-const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl, rating, download, username }) => {
+const Main: React.FC<Iprops> = ({ name, logo, apk_file, videoUrl, rating, download, username, devIcon, sologan }) => {
+  const navigate = useNavigate();
+  const slide = {
+    name,
+    logo,
+    apk_file,
+    videoUrl,
+    rating,
+    download,
+    username,
+    devIcon,
+    sologan,
+}
   const handleInstall = () => {
     const apkUrl = apk_file ? apk_file : 'https://games-fi.s3.ap-south-1.amazonaws.com/website+games/canyonFall_APK.apk';
     const downloadLink = document.createElement('a');
@@ -36,7 +49,7 @@ const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl, rat
           </MainVideoBlock>
           <MainInfo>
             <Mainheading>{name ?? ''}</Mainheading>
-            <StyledLink to={'/tongames'}>{username }</StyledLink>
+            <StyledLink onClick={() => navigate('/tongames', { state: { slide } })}>{username}</StyledLink>
             <StyledParagraph>Contains ads</StyledParagraph>
             <StyledBcWrapper>
               <StyledLogo src={logo ?? ''} alt='logo' />
@@ -66,7 +79,7 @@ const Main: React.FC<Iprops> = ({ name, logo, nameLine2, apk_file, videoUrl, rat
                 </StyledShareOption>
                 <StyledShareOption onClick={handleInstall}>
                   <StyledSvg className="XkAcee" fill='#6df378' viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7 3H17C18.1045 3 19 3.8955 19 5V21L12 18L5 21L5.01075 5C5.01075 3.8955 5.8965 3 7 3ZM12 15.824L17 18V5H7V18L12 15.824ZM13 7V9H15V11H13V13H11V11H9V9H11V7H13Z" />
+                    <path fillRule="evenodd" clipRule="evenodd" d="M7 3H17C18.1045 3 19 3.8955 19 5V21L12 18L5 21L5.01075 5C5.01075 3.8955 5.8965 3 7 3ZM12 15.824L17 18V5H7V18L12 15.824ZM13 7V9H15V11H13V13H11V11H9V9H11V7H13Z" />
                   </StyledSvg>
                   <StyledP>Add to wishlist</StyledP>
                 </StyledShareOption>
@@ -153,10 +166,12 @@ const MainInfo = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.p`
   color: #6df378;
+  margin-top:0;
   margin-bottom: 4px;
   text-decoration: none;
+  cursor: pointer;
 `;
 
 const StyledParagraph = styled.p`
