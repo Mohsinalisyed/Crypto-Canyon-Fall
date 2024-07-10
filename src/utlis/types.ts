@@ -1,75 +1,59 @@
-interface Screenshot {
+export interface Icon {
     id: number;
-    attributes: {
-        url: string;
-        isUrlSigned: boolean;
-    };
+    url: string;
+    isUrlSigned: boolean;
 }
 
 interface Video {
     id: number;
-    attributes: {
-        url: string;
-        isUrlSigned: boolean;
-    };
-}
-
-interface Icon {
-    data: {
-        id: number;
-        attributes: {
-            url: string;
-            isUrlSigned: boolean;
-        };
-    };
+    url: string;
+    isUrlSigned: boolean;
 }
 
 interface Apk {
-    data: {
-        id: number;
-        attributes: {
-            url: string;
-            isUrlSigned: boolean;
-        };
-    };
+    id: number;
+    url: string;
+    isUrlSigned: boolean;
 }
 
-interface User {
-    data: {
-        id: number;
-        attributes: {
-            email: string;
-            slogan: string;
-            username: string;
-            icon: Icon;
-        };
-    };
+export interface Screenshot {
+    id: number;
+    url: string;
+    isUrlSigned: boolean;
 }
 
 export interface Game {
     id: number;
-    attributes: {
-        name: string;
-        category: string;
-        description: string;
-        downloads: string;
-        rating: number;
-        is_featured: boolean;
-        createdAt: string; 
-        updatedAt: string;
-        publishedAt: string;
-        screenshots: {
-            data: Screenshot[];
-        };
-        video: {
-            data: Video[];
-        };
-        icon: Icon;
-        apk: Apk;
-        users_permissions_user: User;
-    };
+    name: string;
+    category: string;
+    description: string;
+    downloads: string;
+    rating: number;
+    is_featured: boolean;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    video: Video[];
+    apk: Apk;
+    icon: Icon;
+    screenshots: Screenshot[];
 }
 
-export interface GameArray {
-    data: Game[]
+export interface User {
+    id: number;
+    username: string;
+    email: string;
+    provider: string;
+    confirmed: boolean;
+    blocked: boolean;
+    slogan: string;
+    createdAt: string;
+    updatedAt: string;
+    icon: Icon;
+    games: Game[];
+}
+export interface ArrowProps {
+    currentSlide: number;
+    slideCount: number;
+    onClick: () => void;
 }

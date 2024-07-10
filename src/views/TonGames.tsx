@@ -2,30 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container } from '../lib';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Game } from '../utlis';
 
 const TonGames = () => {
   const navigate = useNavigate()
   const location = useLocation();
   const { slide } = location.state;
-  console.log(slide,'slide')
   return (
     <StyledContainer>
       <TonContainer>
         <TonLogoContainer>
           <PlayButton>
-            <PlayButtonText src={!!slide.devIcon ? slide.devIcon : slide.icon.url} alt='icon'/>
+            <PlayButtonText src={!!slide?.devIcon ? slide.devIcon : slide?.icon?.url} alt='icon'/>
           </PlayButton>
-          <TonText>{!!slide.username ? slide.username : slide.user_name}</TonText>
+          <TonText>{!!slide?.username ? slide?.username : slide?.user_name}</TonText>
         </TonLogoContainer>
         <PlayDescription>
-          <StyledTextH3>{!!slide.solgan ? slide.solgan : slide.slogan}</StyledTextH3>
+          <StyledTextH3>{!!slide?.solgan ? slide?.solgan : slide?.slogan}</StyledTextH3>
         </PlayDescription>
       </TonContainer>
       <GamesBox>
-        <MoreGamesHeading>More by {!!slide.username ? slide.username : slide.user_name}</MoreGamesHeading>
+        <MoreGamesHeading>More by {!!slide?.username ? slide?.username : slide?.user_name}</MoreGamesHeading>
         <MoreGamesWrapper>
           {
-            slide && slide.all_games.map((item: any, index: number) =>  (
+            slide && slide.all_games.map((item: Game, index: number) =>  (
               <GameItem key={index} onClick={() => navigate('/viewgame', { state: { slide, item, username: !!slide.username ? slide.username : slide.user_name } })}>
                   <GameImage src={item.icon?.url} alt={slide.icon?.url} />
                   <StyledTextH3>{item.name}</StyledTextH3>

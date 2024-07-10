@@ -5,9 +5,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { Game, Icon, User } from '../utlis';
 
 interface Iprops {
-    userData: any
+    userData: User[]
 }
 const ArrowLeft = ({ currentSlide, slideCount, ...props }: any) => {
     const { onClick } = props;
@@ -32,16 +33,22 @@ const ArrowRight = ({ currentSlide, slideCount, ...props }: any) => {
 
 const MainSlider: React.FC<Iprops> = ({ userData }) => {
     const navigate = useNavigate();
-    const filteredGames = userData && userData?.map((slide:any) => {
-        const featuredGame = slide.games.find((game: any) => game.is_featured);
+    const filteredGames = userData && userData?.map((slide:User) => {
+        const featuredGame = slide.games.find((game: Game) => game.is_featured);
         const defaultGame = slide.games[0];
-        const res = {
+        const res: {
+            username: string;
+            icon: Icon;
+            all_games: Game[];
+            solgan: string;
+            game: Game;
+        } = {
             username: slide.username,
             icon: slide.icon,
             all_games: slide.games,
             solgan: slide.slogan,
             game: featuredGame || defaultGame
-        }
+        };
         return res;
     });
     const MYSliderSetting = {
@@ -88,11 +95,11 @@ const MainSlider: React.FC<Iprops> = ({ userData }) => {
             </Box>
             <StyledSlider>
                 <Slider {...MYSliderSetting}>
-                    {filteredGames && filteredGames.map((slide: any, index: number) => (
+                    {filteredGames && filteredGames.map((slide, index: number) => (
                         <Box key={index}>
                             <MainVideo src={slide.game.video[0].url} preload="auto" autoPlay muted loop />
                             <Box style={{ display: "flex", marginTop: "16px" }}>
-                                <StyledLogo src={slide.game.icon.url} alt={slide.game.icon.url} onClick={() => navigate('/viewgame', { state: { slide } })} />
+                                <StyledLogo src={slide.game.icon.url} alt={slide.game.icon.url} onClick={() => navigate('/viewgame', { state: {slide, item: slide.game, username:slide.username } })} />
                                 <Box style={{ marginLeft: "16px" }}>
                                     <Text style={{ color: 'black', fontWeight: "500" }}>{slide.game.name}</Text>
                                     <Text style={{ color: '#5F6368' }} onClick={() => navigate('/tongames', { state: { slide } })}><u>{slide.username }</u></Text>
