@@ -4,11 +4,10 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
-import {  useNavigate } from 'react-router-dom';
-import { Game, GameArray } from '../utlis';
+import { useNavigate } from 'react-router-dom';
 
 interface Iprops {
-    gameData: GameArray
+    userData: any
 }
 const ArrowLeft = ({ currentSlide, slideCount, ...props }: any) => {
     const { onClick } = props;
@@ -31,10 +30,19 @@ const ArrowRight = ({ currentSlide, slideCount, ...props }: any) => {
     );
 };
 
-const MainSlider: React.FC<Iprops> = ({ gameData }) => {
+const MainSlider: React.FC<Iprops> = ({ userData }) => {
     const navigate = useNavigate();
-    const array = gameData && gameData.data.map((item: Game) => item.attributes)
-
+    const filteredGames = userData && userData?.map((slide:any) => {
+        const featuredGame = slide.games.find((game: any) => game.is_featured);
+        const defaultGame = slide.games[0];
+        const res = {
+            username: slide.username,
+            icon: slide.icon,
+            all_games:slide.games,
+            game: featuredGame || defaultGame
+        }
+        return res;
+    });
     const MYSliderSetting = {
         dots: false,
         infinite: false,
@@ -71,7 +79,6 @@ const MainSlider: React.FC<Iprops> = ({ gameData }) => {
             },
         ],
     };
-
     return (
         <Container style={{ paddingTop: '72px' }}>
             <Box style={{ margin: '15px' }}>
@@ -80,16 +87,16 @@ const MainSlider: React.FC<Iprops> = ({ gameData }) => {
             </Box>
             <StyledSlider>
                 <Slider {...MYSliderSetting}>
-                    {array && array.filter((item: any) => item.is_featured).map((slide: any, index: number) => (
+                    {filteredGames && filteredGames.map((slide: any, index: number) => (
                         <Box key={index}>
-                            <MainVideo src={slide.video.data[0].attributes.url} preload="auto" autoPlay muted loop />
+                            <MainVideo src={slide.game.video[0].url} preload="auto" autoPlay muted loop />
                             <Box style={{ display: "flex", marginTop: "16px" }}>
-                                <StyledLogo src={slide.icon.data.attributes.url} alt={slide.icon.data.attributes.url} onClick={() => navigate('/viewgame', { state: { slide } })} />
+                                <StyledLogo src={slide.game.icon.url} alt={slide.game.icon.url} onClick={() => navigate('/viewgame', { state: { slide } })} />
                                 <Box style={{ marginLeft: "16px" }}>
-                                    <Text style={{ color: 'black', fontWeight: "500" }}>{slide.name}</Text>
-                                    <Text style={{ color: '#5F6368' }} onClick={() => navigate('/tongames', { state: { slide } })}><u>{slide.users_permissions_user.data.attributes.username}</u></Text >
-                                    <Text style={{ color: '#5F6368', fontSize: "16px" }} >{slide.category}</Text>
-                                    <Text style={{ color: '#5F6368', fontSize: "16px" }}>{slide.rating} <StyledIcon className="material-icons">star</StyledIcon></Text>
+                                    <Text style={{ color: 'black', fontWeight: "500" }}>{slide.game.name}</Text>
+                                    <Text style={{ color: '#5F6368' }} onClick={() => navigate('/tongames', { state: { slide } })}><u>{slide.username }</u></Text>
+                                    <Text style={{ color: '#5F6368', fontSize: "16px" }}>{slide.game.category}</Text>
+                                    <Text style={{ color: '#5F6368', fontSize: "16px" }}>{slide.game.rating} <StyledIcon className="material-icons">star</StyledIcon></Text>
                                 </Box>
                             </Box>
                         </Box>

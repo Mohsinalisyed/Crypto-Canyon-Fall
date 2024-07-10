@@ -11,24 +11,15 @@ interface Iprops {
   videoUrl?: string
   rating?: string
   download?: number
-  username?: string
+  user_name?: string
   devIcon?: string
-  sologan?:string
+  sologan?: string
+  all_games?: any
+  slide?:any
 }
 
-const Main: React.FC<Iprops> = ({ name, logo, apk_file, videoUrl, rating, download, username, devIcon, sologan }) => {
+const Main: React.FC<Iprops> = ({ name, logo, apk_file, videoUrl, rating, download, user_name, devIcon, sologan, all_games, slide }) => {
   const navigate = useNavigate();
-  const slide = {
-    name,
-    logo,
-    apk_file,
-    videoUrl,
-    rating,
-    download,
-    username,
-    devIcon,
-    sologan,
-}
   const handleInstall = () => {
     const apkUrl = apk_file ? apk_file : 'https://games-fi.s3.ap-south-1.amazonaws.com/website+games/canyonFall_APK.apk';
     const downloadLink = document.createElement('a');
@@ -49,7 +40,7 @@ const Main: React.FC<Iprops> = ({ name, logo, apk_file, videoUrl, rating, downlo
           </MainVideoBlock>
           <MainInfo>
             <Mainheading>{name ?? ''}</Mainheading>
-            <StyledLink onClick={() => navigate('/tongames', { state: { slide } })}>{username}</StyledLink>
+            <StyledLink onClick={() => navigate('/tongames', { state: { slide } })}>{user_name}</StyledLink>
             <StyledParagraph>Contains ads</StyledParagraph>
             <StyledBcWrapper>
               <StyledLogo src={logo ?? ''} alt='logo' />

@@ -2,18 +2,17 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import MainSlider from '../components/MainSlider';
 import MainFooter from '../components/MainFooter';
-import { GameArray } from '../utlis';
 interface Iprops {
-  gameData: GameArray
+  userData: any
 }
 
-const Home: React.FC<Iprops> = ({ gameData }) => {
+const Home: React.FC<Iprops> = ({ userData }) => {
   
   
   return (
     <React.Fragment>
       <Navbar />
-      <MainSlider gameData={gameData } />
+      <MainSlider userData={userData} />
       <MainFooter/>
     </React.Fragment>
   );
