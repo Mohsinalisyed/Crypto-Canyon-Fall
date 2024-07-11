@@ -80,7 +80,7 @@ const MainSlider: React.FC<Iprops> = ({ userData }) => {
             {
                 breakpoint: 500,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                     arrows: false,
                 },
