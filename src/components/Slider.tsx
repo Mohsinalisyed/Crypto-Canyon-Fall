@@ -1,20 +1,18 @@
 import React from 'react'
 import { Container } from '../lib'
 import styled from 'styled-components'
-import { Screenshot } from '../utlis'
 
 interface Iprops {
-  screen_shot?: Screenshot[]
+  screen_shot?: any
 }
 
 const Slider: React.FC<Iprops> = ({ screen_shot }) => {
   return (
       <Container style={{marginTop:"32px"}}>
-      
         {screen_shot ? (
         <SliderWrapper>
-          {screen_shot.map((img: Screenshot, index:number) => (
-           <SlideImage src={img.url} alt={`screenshot${index}`} key={index} />
+          {screen_shot.data.map((img:any, index:number) => (
+            <SlideImage src={img.attributes.url} alt={`screenshot${index}`} key={index} />
          ))}
         </SliderWrapper>
 

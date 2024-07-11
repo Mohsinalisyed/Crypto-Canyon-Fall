@@ -4,10 +4,10 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import TonGames from './views/TonGames';
 import Home from './views/Home';
 import ViewGame from './views/ViewGame';
-import { useGameData } from './utlis';
+import { useUserData } from './utlis';
 
 function App() {
-  const { data: userData } = useGameData();
+  const { data: userData } = useUserData();
   return (
     <BrowserRouter>
       <Routes>
