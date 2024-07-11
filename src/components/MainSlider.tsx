@@ -101,7 +101,7 @@ const MainSlider: React.FC<Iprops> = ({ userData }) => {
                             <Box style={{ display: "flex", marginTop: "16px" }}>
                                 <StyledLogo src={slide.game.icon.url} alt={slide.game.icon.url} onClick={() => navigate('/viewgame', { state: {slide, item: slide.game, username:slide.username } })} />
                                 <Box style={{ marginLeft: "16px" }}>
-                                    <Text style={{ color: 'black', fontWeight: "500" }}>{slide.game.name}</Text>
+                                    <Text style={{ color: 'black', fontWeight: "500" }} onClick={() => navigate('/viewgame', { state: { slide, item: slide.game, username: slide.username } })}>{slide.game.name}</Text>
                                     <Text style={{ color: '#5F6368' }} onClick={() => navigate('/tongames', { state: { slide } })}><u>{slide.username }</u></Text>
                                     <Text style={{ color: '#5F6368', fontSize: "16px" }}>{slide.game.category}</Text>
                                     <Text style={{ color: '#5F6368', fontSize: "16px" }}>{slide.game.rating} <StyledIcon className="material-icons">star</StyledIcon></Text>

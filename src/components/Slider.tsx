@@ -14,7 +14,7 @@ const Slider: React.FC<Iprops> = ({ screen_shot }) => {
         {screen_shot ? (
         <SliderWrapper>
           {screen_shot.map((img: Screenshot, index:number) => (
-           <SlideImage src={img.url} alt={`screenshot${index}`} className='slideImage' key={index} />
+           <SlideImage src={img.url} alt={`screenshot${index}`} key={index} />
          ))}
         </SliderWrapper>
 
@@ -33,12 +33,12 @@ gap:20px;
 ` 
 
 const SlideImage = styled.img`
-max-width: 250px;
-height: 400px;
+height: 350px;
 border-radius: 8px;
 margin-bottom: 16px;
-@media(max - width: 600px) {
-  width: 90 %;
+@media(max-width: 600px) {
+  width: 90%;
   height: auto;
   margin: 12px auto;
+}
 }`
