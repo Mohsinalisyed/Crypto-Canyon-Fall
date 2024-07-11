@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container } from '../lib';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Game } from '../utlis';
 
 const TonGames = () => {
   const navigate = useNavigate()
@@ -25,8 +24,8 @@ const TonGames = () => {
         <MoreGamesHeading>More by {!!slide?.username ? slide?.username : slide?.user_name}</MoreGamesHeading>
         <MoreGamesWrapper>
           {
-            slide && slide.all_games.map((item: Game, index: number) =>  (
-              <GameItem key={index} onClick={() => navigate('/viewgame', { state: { slide, item, username: !!slide.username ? slide.username : slide.user_name } })}>
+            slide && slide.all_games.map((item: any, index: number) =>  (
+              <GameItem key={index} onClick={() => navigate(`/viewgame?id=${item.id}`, { state: { slide } })}>
                   <GameImage src={item.icon?.url} alt={slide.icon?.url} />
                   <StyledTextH3>{item.name}</StyledTextH3>
                 </GameItem>

@@ -5,13 +5,10 @@ import { formatDate } from '../utlis';
 
 interface Iprops {
     about?: string;
-    aboutLine2?: string;
-    aboutLine3?: string;
     updated_on?: string;
-    data_saftey?: string;
 }
 
-const ContentSection: React.FC<Iprops> = ({ about, updated_on, data_saftey, aboutLine2, aboutLine3 }) => {
+const ContentSection: React.FC<Iprops> = ({ about, updated_on}) => {
     return (
         <StyledContainer>
             <StyledTextH3>About this app</StyledTextH3>
@@ -23,7 +20,7 @@ const ContentSection: React.FC<Iprops> = ({ about, updated_on, data_saftey, abou
             <StyledDataSafety>
                 <StyledTextH3>Data safety</StyledTextH3>
                 <StyledDesc>
-                    {data_saftey ? data_saftey : ' Safety starts with understanding how developers collect and share your data. Data privacy and security practices may vary based on your use, region, and age. The developer provided this information and may update it over time.'}
+                    Safety starts with understanding how developers collect and share your data. Data privacy and security practices may vary based on your use, region, and age. The developer provided this information and may update it over time.
                 </StyledDesc>
             </StyledDataSafety>
         </StyledContainer>
